@@ -4,8 +4,28 @@
 // iedereen: https://fdnd.directus.app/items/person/?fields=id,name,github_handle,avatar&filter={%22squads%22:{%22squad_id%22:{%22name%22:%22Minor%20Web%20Dev%22}}}&sort=name
 
 const baseURL = 'https://fdnd.directus.app/';
-const endpointMe = 'items/person/67';
+const endpointMe = 'items/person/192';
 
+// Plak de URL aan elkaar
+const myURL = baseURL + endpointMe;
+
+console.log(myURL);
+
+// Roep functie aan, pak data uit mijn URL en doe er dit mee:
+getData(myURL).then(abbsData => {
+	// console.log(abbsData.data.name);
+
+	// Pak de H1 uit het HTML bestand
+	let deH1 = document.querySelector("h1");
+
+	// Variable maken van de data die we willen gebruiken en geven we de naam een 'naam'
+	let myName = abbsData.data.name;
+
+	// Verander de tekst van de content van H1 met de data uit myName
+	deH1.textContent = myName;
+
+	// console.log(myName);
+});
 
 
 

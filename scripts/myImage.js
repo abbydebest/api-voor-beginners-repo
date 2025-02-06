@@ -1,4 +1,21 @@
+getData(myURL).then(abbsData => {
+    let myAvatar = abbsData.data.avatar;
 
+    console.log(myAvatar);
+
+    // Maakt een variable myImg en creeër hierin een img
+    let myImg = document.createElement("img");
+    let myName = abbsData.data.name;
+
+    myImg.src = myAvatar;
+    myImg.alt = myName;
+
+    console.log(myImg);
+
+    let mySection = document.querySelector("section:nth-of-type(1)");
+
+    mySection.append(myImg);
+})
 
 
 
